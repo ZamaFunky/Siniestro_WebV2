@@ -5,11 +5,12 @@ from mysql.connector import Error
 
 DB_CONFIG = {
     "host": os.getenv("MYSQL_HOST", "localhost"),
-    "port": int(os.getenv("MYSQL_PORT", "3307")),
+    "port": int(os.getenv("MYSQL_PORT", "3306")),
     "user": os.getenv("MYSQL_USER", "root"),
     "password": os.getenv("MYSQL_PASSWORD", "Petra09"),
     "database": os.getenv("MYSQL_DATABASE", "siniestro_web_v2"),
     "charset": "utf8mb4",
+    "connection_timeout": int(os.getenv("MYSQL_CONNECT_TIMEOUT", "10")),
 }
 
 def get_conn():
